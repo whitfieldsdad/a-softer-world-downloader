@@ -25,8 +25,10 @@ A Python 3 library for downloading every comic from [A Softer World](http://www.
 ## Features
 
 - Download every comic
-- List metadata about every comic in JSONL format (archives in [JSON](data/comics.json), [JSONL](data/comics.jsonl) and [CSV](data/comics.csv) format have also been included in the [data](data) directory of this repository)
+- List metadata about every comic in JSONL format ([archives](https://www.asofterworld.com/archive.php) in [JSON](data/comics.json), [JSONL](data/comics.jsonl) and [CSV](data/comics.csv) format have also been included in the [data](data) directory of this repository)
 - Automatically caches comic metadata to a customizable directory to avoid unnecessary network calls and improve performance
+
+
 
 ## Usage
 
