@@ -108,6 +108,19 @@ class Client:
     def get_comic_url(self, comic_id: int) -> str:
         return URL_TEMPLATE.format(comic_id=comic_id)
 
+    def download_comic(self, comic_id: int, output_dir: str) -> None:
+        comic = self.get_comic_metadata(comic_id)
+        url = comic.src
+        if self.filename_policy == FILENAME:
+            filename = comic.filename
+        elif self.filename_policy == ID:
+            filename = f'{comic.id}.jpg'
+        else:
+            raise ValueError(f"Unknown filename policy: {self.filename_policy}")
+        
+        path = os.path.join(output_dir, filename)
+        util.download_file(url=url, path=path)
+
     def download_comics(self, output_dir: str, min_comic_id: int = MIN_COMIC_ID, max_comic_id: int = MAX_COMIC_ID) -> None:
         downloads = {}
         for comic in self.iter_comics(min_comic_id=min_comic_id, max_comic_id=max_comic_id):
