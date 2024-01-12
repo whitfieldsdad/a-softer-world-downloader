@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "a-softer-world-downloader"
+version = "0.1.0"
+description = "Yet Another Downloader for A Softer World"
+authors = ["Tyler Fisher <tylerfisher@tylerfisher.ca>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "a_softer_world" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+beautifulsoup4 = "^4.12.2"
+requests = "^2.31.0"
+click = "^8.1.7"
+
+[tool.poetry.scripts]
+client = "a_softer_world.cli:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
